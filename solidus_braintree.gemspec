@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "solidus_api", [">= 1.0.0", "< 3"]
   spec.add_dependency "solidus_core", [">= 1.0.0", "< 3"]
-  spec.add_dependency "solidus_support"
+  spec.add_dependency "solidus_support", '~> 0.3.2'
   spec.add_dependency "braintree", "~> 2.46"
 
   spec.add_development_dependency "rake", "~> 10.0"
