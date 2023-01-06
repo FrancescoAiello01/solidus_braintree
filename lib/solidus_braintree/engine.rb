@@ -5,6 +5,9 @@ module SolidusBraintree
     config.autoload_paths += %W(#{config.root}/lib)
     config.assets.precompile += %w( spree/backend/braintree/solidus_braintree.js )
 
+    config.active_record.yaml_column_permitted_classes ||= []
+    config.active_record.yaml_column_permitted_classes << Symbol
+
     initializer "spree.gateway.payment_methods", after: "spree.register.payment_methods" do |app|
       app.config.spree.payment_methods << Solidus::Gateway::BraintreeGateway
     end
