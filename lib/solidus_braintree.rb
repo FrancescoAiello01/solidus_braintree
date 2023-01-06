@@ -8,6 +8,7 @@ require 'solidus_braintree/request_protection'
 require 'solidus_braintree/extension_configuration'
 require 'solidus_braintree/version'
 require 'solidus_braintree/engine'
+require 'solidus_paypal_braintree'
 
 module SolidusBraintree
   def self.table_name_prefix
