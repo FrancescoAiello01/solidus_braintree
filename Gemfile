@@ -4,7 +4,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
-gem 'solidus', github: 'solidusio/solidus', branch: branch
+
+if branch == 'master'
+  gem 'solidus', github: 'nebulab/solidus', branch: 'gsmendoza/4878-set-solidus-frontend-to-3-4-0-dev'
+else
+  gem 'solidus', github: 'solidusio/solidus', branch: branch
+end
 
 # The solidus_frontend gem has been pulled out since v3.2
 gem 'solidus_frontend', github: 'solidusio/solidus_frontend' if branch == 'master'
