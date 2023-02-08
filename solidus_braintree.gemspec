@@ -34,11 +34,11 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'solidus_api', ['>= 2.4.0', '< 4']
   spec.add_dependency 'solidus_core', ['>= 2.4.0', '< 4']
   spec.add_dependency 'solidus_support', ['>= 0.8.1', '< 1']
+  spec.add_dependency 'vcr'
+  spec.add_dependency 'webmock'
 
   spec.add_development_dependency 'rails-controller-testing'
   spec.add_development_dependency 'solidus_dev_support', '~> 2.5'
-  spec.add_development_dependency 'vcr'
-  spec.add_development_dependency 'webmock'
 
   spec.post_install_message = "If you're upgrading to v2.0.0, please see the README for upgrade instructions."
 end
