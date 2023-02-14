@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'spree/testing_support/order_walkthrough'
 
 shared_context "with frontend checkout setup" do
   let(:braintree) { new_gateway(active: true) }
@@ -25,7 +24,7 @@ shared_context "with frontend checkout setup" do
       )
     end
 
-    order = Spree::TestingSupport::OrderWalkthrough.up_to(:delivery)
+    order = SolidusBraintree::OrderWalkthrough.up_to(:delivery)
     user = create(:user)
     order.user = user
     order.number = "R9999999"
