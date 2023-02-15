@@ -11,4 +11,6 @@ SolidusBraintree::Engine.routes.draw do
       post :update
     end
   end
+
+  get '/content/cvv', to: 'content#cvv', as: :cvv
 end
