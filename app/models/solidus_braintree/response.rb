@@ -29,6 +29,11 @@ module SolidusBraintree
           # For error responses we want to have the CVV code
           cvv_result: transaction&.cvv_response_code
         )
+
+        puts "DEBUG START: pp result.params"
+        pp result.params
+        puts "DEBUG END: pp result.params"
+
         new(false, error_message(result), result.params, options)
       end
 
