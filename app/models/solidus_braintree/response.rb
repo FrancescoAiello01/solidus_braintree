@@ -30,11 +30,7 @@ module SolidusBraintree
           cvv_result: transaction&.cvv_response_code
         )
 
-        puts "DEBUG START: pp result.params"
-        pp result.params
-        puts "DEBUG END: pp result.params"
-
-        new(false, error_message(result), result.params, options)
+        new(false, error_message(result), result.params.deep_stringify_keys, options)
       end
 
       def response_options(transaction)
