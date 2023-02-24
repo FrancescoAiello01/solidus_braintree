@@ -70,12 +70,12 @@ RSpec.describe "Checkout", type: :feature, js: true do
     end
 
     # TODO: Reenable these specs once Venmo is enabled on the Braintree sandbox.
-    xcontext 'with Venmo transactions', vcr: { cassette_name: 'checkout/valid_venmo_transaction' } do
+    context 'with Venmo transactions', vcr: { cassette_name: 'checkout/valid_venmo_transaction', record: :new_episodes } do
       before do
         fake_venmo_successful_tokenization
       end
 
-      context 'with CreditCard disabled' do
+      context 'with CreditCard disabled', :focus do
         it 'can checkout with Venmo' do
           next_checkout_step
           finalize_checkout
@@ -157,6 +157,7 @@ RSpec.describe "Checkout", type: :feature, js: true do
   end
 
   def finalize_checkout
+    check('accept_terms_and_conditions')
     click_button('Place Order')
   end
 
