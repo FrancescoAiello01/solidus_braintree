@@ -24,7 +24,7 @@ module SolidusBraintree
 
     initializer 'add_solidus_braintree_response_to_log_entry_permitted_classes' do
       Spree.config do |config|
-        config.log_entry_permitted_classes.concat(['SolidusBraintree::Response', 'Symbol']).uniq!
+        config.log_entry_permitted_classes << 'SolidusBraintree::Response'
       end
     end
 
